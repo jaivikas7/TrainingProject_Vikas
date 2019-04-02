@@ -1,0 +1,207 @@
+/* SIGN IN SIGN UP FORMS */
+.btn-green {
+	border-color: #66CDAA;
+	color: #66CDAA;
+}
+
+.green {
+	color: #66CDAA;
+	text-decoration: none;
+}
+/* SIGN IN SIGN UP FORMS */
+
+/* CONTACT FORM */
+.dash-green {
+	border-bottom: 2px solid #66CDAA;
+	width: 12%;
+	margin-left: 2%;
+	margin-top: -1%;
+}
+/* CONTACT FORM */
+
+/* CUSTOMER SECTION */
+.list-group a {
+	color: #66CDAA;
+}
+
+.list-group-item {
+	border: none;
+}
+
+.list-group-item.active {
+	background-color: #66CDAA;
+	color: white;
+}
+/* CUSTOMER SECTION */
+
+/* SHOPPING CART */
+.btn-gray {
+	background-color: #808080;
+	border: 1px solid #808080;
+	color: white;
+}
+
+.btn-green-bg {
+	background-color: #66CDAA;
+	color: white;
+	border: 1px solid #66CDAA;
+}
+/* SHOPPING CART */
+
+/* CUSTOMER ORDERS */
+.text-white {
+	color: white;
+}
+
+.il-block {
+	display: inline-block;
+	padding: 2px;
+	border-radius: 0.2em;
+	line-height: 15px;
+}
+/* CUSTOMER ORDERS */
+
+/* NEW PRODUCT FORM */
+.mb-3 {
+	border: 1px solid #ddd;
+	padding: 8px;
+	width: 100%;
+}
+/* NEW PRODUCT FORM */
+
+/* CHECKOUT ADDRESS */
+.nav-tabs a {
+	color: #909090;
+	border-bottom: 1px solid #66CDAA;
+}
+
+.nav-tabs li.done a {
+	color: #66CDAA;
+}
+
+.nav-tabs li.active a {
+	background-color: #66CDAA;
+	color: white;
+}
+/* CHECKOUT ADDRESS */
+
+/* SOCIAL ICONS */
+.dark
+{
+	background-color: #808080;
+}
+/* SOCIAL ICONS */
+
+/* MENU BAR */
+.row2 ul li a
+{
+	color: #808080;
+}
+
+.row2 ul li a:hover {
+	background-color: white;
+	color: #808080;
+}
+/* MENU BAR */
+
+/* BREADCRUMB */
+.row3 {
+	background-image: url("../images/texture-bw.png");
+	padding-left: 15px;
+}
+
+.breadcrumb {
+	background-color: transparent;
+	font-size: 18px;
+}
+
+.breadcrumb-item a {
+	color: #66CDAA;
+}
+
+#tx .breadcrumb-item>active {
+	color: #404040;
+}
+/* BREADCRUMB */
+
+/* ABOUT US */
+.row5
+{
+	background-color: #909090;
+}
+
+.row5 span {
+	background-color: #999999;
+	border: 1px solid #999999;
+	border-radius: 0em;
+}
+
+.row5 span a {
+	color: white;
+}
+
+.row5 .row h5 {
+	color: #fffafa;
+	font-weight: bold;
+}
+.row5 .row .abcd {
+	margin-left: -20px;
+}
+
+.row5 .row p {
+	color: #dcdcdc;
+	font-weight: ligher;
+}
+
+.row5 .row img {
+	width: 60px;
+	height: 60px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.dark1
+{
+	background-color: #404040;
+}
+/* ABOUT US */
+
+/* INDEX */
+
+.ml
+{
+	padding: 22px;
+}
+
+.mar-left
+{
+	margin-left: 7px;
+	margin-right: 7px;
+}
+
+.prod
+{
+	border: 1px solid #ccc;
+	
+}	
+
+.prod img
+{
+	
+	height: 170px;
+}
+
+.prod1
+{
+	border: 1px solid #ccc;
+	
+}
+
+.prod1 img
+{
+	
+	height: 280px;
+	width: 100%;
+}
+
+/* INDEX */
