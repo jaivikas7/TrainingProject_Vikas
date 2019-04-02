@@ -1,3 +1,4 @@
+<%@ page errorPage="ExceptionPage.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,15 +29,15 @@
 			<div class="col-md-offset-1 col-md-6">
 				<a class="btn btn-default btn-gray">Contact +91 40 6621 7777</a>
 			</div>
-<% String w = (String)session.getAttribute("log");
-	
-		if(w==null)
-		{
-	%>
+			<%
+				String w = (String) session.getAttribute("log");
+
+				if (w == null) {
+			%>
 			<div class="col-md-4">
-				<a href="#" class="btn btn-default btn-gray"><i
+				<a href="SignInSignUpForms.jsp" class="btn btn-default btn-gray"><i
 					class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;SIGN IN</a> <a
-					href="#" class="btn btn-default btn-gray"><i
+					href="SignInSignUpForms.jsp" class="btn btn-default btn-gray"><i
 					class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;SIGN UP</a> <a
 					href="#" class="btn btn-default btn-gray"><i
 					class="fa fa-facebook"></i></a> <a href="#"
@@ -45,16 +46,16 @@
 					class="fa fa-google-plus"></i></a> <a href="#"
 					class="btn btn-default btn-gray"><i class="fa fa-envelope"></i></a>
 			</div>
-	<%
-		}
-		else if(w!=null)
-		{
-			RequestDispatcher rd = request.getRequestDispatcher("CustomerAccount.jsp");
-			rd.forward(request, response);
-		
-			
-		}
-	%>
+			<%
+				}  else if (w != null) {
+					%>
+					<div class="col-md-4">
+				<a href="#" class="btn btn-default btn-gray">Welcome <%= w %></a> 
+				<a href="logout" class="btn btn-default btn-gray"><i class="glyphicon glyphicon-log-out"></i></a>
+			</div>
+				<%
+			}
+		%>
 
 		</div>
 
@@ -121,25 +122,22 @@
 			<div class="col-md-4">
 				<div class="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">HOME</a></li>
+						<li class="breadcrumb-item"><a href="index.jsp">HOME</a></li>
 						<li class="breadcrumb-item active">NEW ACCOUNT / SIGN IN</li>
 					</ol>
 				</div>
 			</div>
 		</div>
 	</div>
+
+
+
 	<div class="container-fluid">
-
-
 		<!-- SIGN IN SIGN UP FORMS -->
-
 		<div class="row">
-
 			<!-- SIGN UP FORM -->
-
 			<div class="col-md-offset-1 col-md-5">
 				<hr />
-
 				<h2>NEW ACCOUNT</h2>
 				<p class="lead">Not our registered customer yet?</p>
 				<br />
@@ -155,7 +153,7 @@
 
 					<div class="form-group">
 						<label for="f1"> Name </label> <input type="text" name="f1"
-							class="form-control" required="required" autofocus="autofocus"/>
+							class="form-control" required="required" autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
@@ -176,41 +174,40 @@
 					</div>
 
 				</form>
-					<%
-							String s = (String)request.getAttribute("stat");
-							if(s != null)
-							{
-								if(s.equals("Y")){
-					%>
-									<div class="alert alert-success" role="alert">Registration Successful.</div>
-									<%	
-								}
-								
-								else if(s.equals("E")){ %> 
-								
-									<div class="alert alert-danger" role="alert">Account already exists with this email ID.</div>
-								<%
-								}
-								
-								else{
-					%>
-									<div class="alert alert-danger" role="alert">Registration Failed</div><%
-							}
-						}
-					%>
-					<hr />
+				<%
+					String s = (String) request.getAttribute("stat");
+					if (s != null) {
+						if (s.equals("Y")) {
+				%>
+				<div class="alert alert-success" role="alert">Registration
+					Successful.</div>
+				<%
+					}
+						else if (s.equals("E")) {
+				%>
+				<div class="alert alert-danger" role="alert">Account already
+					exists with this email ID.</div>
+				<%
+					}
+						else {
+				%>
+				<div class="alert alert-danger" role="alert">Registration
+					Failed</div>
+				<%
+					}
+					}
+				%>
+				<hr />
 			</div>
 
 			<!-- SIGN IN FORM -->
 
 			<div class="col-md-5">
 				<hr />
-
 				<h2>SIGN IN</h2>
 				<p class="lead">Already our customer?</p>
 				<br />
 				<p>Get access to your Orders, Wishlist and Recommendations.</p>
-
 				<form action="signin" method="post">
 
 					<div class="form-group">
@@ -229,28 +226,25 @@
 							<i class="glyphicon glyphicon-log-in"></i>&nbsp;LOG IN
 						</button>
 					</div>
-
 				</form>
 				<%
-							String x = (String)request.getAttribute("log");
-							if(x != null)
-							{
-								if(x.equals("N")){
-					%>
-									<div class="alert alert-danger" role="alert">Invalid Credentials</div><%
-							}
-						}
-					%>
-				
-				
+					String x = (String) request.getAttribute("log");
+					if (x != null) {
+						if (x.equals("N")) {
+				%>
+				<div class="alert alert-danger" role="alert">Invalid
+					Credentials</div>
+				<%
+					}
+					}
+				%>
 				<hr />
 			</div>
-
 		</div>
-
 		<!-- SIGN IN SIGN UP FORMS -->
-
 	</div>
+
+
 	<div class="container-fluid">
 		<div class="row5">
 			<div class="row dark">
