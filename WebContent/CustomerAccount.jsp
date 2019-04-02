@@ -1,3 +1,4 @@
+<%@ page errorPage="ExceptionPage.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,16 +29,15 @@
 			<div class="col-md-offset-1 col-md-6">
 				<a class="btn btn-default btn-gray">Contact +91 40 6621 7777</a>
 			</div>
+			<%
+				String w = (String) session.getAttribute("log");
 
-	<% String w = (String)session.getAttribute("log");
-	
-		if(w==null)
-		{
-	%>
+				if (w == null) {
+			%>
 			<div class="col-md-4">
 				<a href="SignInSignUpForms.jsp" class="btn btn-default btn-gray"><i
 					class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;SIGN IN</a> <a
-					href="#" class="btn btn-default btn-gray"><i
+					href="SignInSignUpForms.jsp" class="btn btn-default btn-gray"><i
 					class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;SIGN UP</a> <a
 					href="#" class="btn btn-default btn-gray"><i
 					class="fa fa-facebook"></i></a> <a href="#"
@@ -46,18 +46,17 @@
 					class="fa fa-google-plus"></i></a> <a href="#"
 					class="btn btn-default btn-gray"><i class="fa fa-envelope"></i></a>
 			</div>
-	<%
-		}
-		else if(w!=null)
-		{%>
-		<div class="col-md-4">
+			<%
+				} else if (w != null) {
+					%>
+						<div class="col-md-4">
 				<a href="#" class="btn btn-default btn-gray">Welcome <%= w %></a> 
 				<a href="logout" class="btn btn-default btn-gray"><i class="glyphicon glyphicon-log-out"></i></a>
 			</div>
-		<%
-			
-		}
-	%>
+					<%
+				}
+			%>
+
 		</div>
 
 		<div class="row row2">
@@ -114,6 +113,7 @@
 				</ul>
 			</div>
 		</div>
+		
 
 		<div class="row row3">
 			<div class="col-md-offset-1 col-md-6">
@@ -123,7 +123,7 @@
 			<div class="col-md-4">
 				<div class="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">HOME</a></li>
+						<li class="breadcrumb-item"><a href="index.jsp">HOME</a></li>
 						<li class="breadcrumb-item active">MY ACCOUNT</li>
 					</ol>
 				</div>
@@ -149,14 +149,14 @@
 				<div class="row">
 					<hr class="dash-green" />
 				</div>
-				<form action="#">
+				<form action="changepass" method="post">
 
 					<div class="row">
 
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="old_pwd"> Old Password </label> <input
-									type="password" name="old_pwd" class="form-control" />
+								<label for="f1"> Old Password </label> <input
+									type="password" name="f1" class="form-control" />
 							</div>
 						</div>
 
@@ -166,15 +166,15 @@
 
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="new_pwd1"> New Password </label> <input
-									type="password" name="new_pwd1" class="form-control" />
+								<label for="f2"> New Password </label> <input
+									type="password" name="f2" class="form-control" />
 							</div>
 						</div>
 
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="new_pwd2"> Retype New Password </label> <input
-									type="password" name="new_pwd2" class="form-control" />
+								<label for="f3"> Retype New Password </label> <input
+									type="password" name="f3" class="form-control" />
 							</div>
 						</div>
 
@@ -189,6 +189,30 @@
 					</div>
 
 				</form>
+				
+				<%
+					String up = (String)request.getAttribute("up");
+					if(up!=null)
+					{
+						if(up.equals("Y"))
+						{%>
+							<div class="alert alert-success">Password Changed Successfully</div>
+						<%
+						}
+						else if(up.equals("DNM"))
+						{%>
+							<div class="alert alert-danger">Please verify passwords</div>
+						<%							
+						}
+						else
+						{%>
+							<div class="alert alert-danger">Old password incorrect</div>
+						<%
+							
+						}
+					}
+				%>
+				
 				<hr />
 
 				<h3>PERSONAL DETAILS</h3>
@@ -303,11 +327,11 @@
 				</div>
 
 				<div class="list-group col-md-8 col-sm-12">
-					<a class="list-group-item active" href="#"><span
+					<a class="list-group-item" href="#"><span
 						class="glyphicon glyphicon-th-list"></span> My Orders</a> <a
 						class="list-group-item" href="#"><span
 						class="glyphicon glyphicon-heart"></span> My Wishlist</a> <a
-						class="list-group-item" href="#"><span
+						class="list-group-item active" href="#"><span
 						class="glyphicon glyphicon-user"></span> My Account</a> <a href="logout"
 						class="list-group-item" href="#"><span
 						class="glyphicon glyphicon-log-out"></span> Logout</a>
