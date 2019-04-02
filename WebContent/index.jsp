@@ -1,3 +1,4 @@
+<%@ page errorPage="ExceptionPage.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,9 +36,9 @@
 		{
 	%>
 			<div class="col-md-5">
-				<a href="#" class="btn btn-default btn-gray"><i
+				<a href="SignInSignUpForms.jsp" class="btn btn-default btn-gray"><i
 					class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;SIGN IN</a> <a
-					href="#" class="btn btn-default btn-gray"><i
+					href="SignInSignUpForms.jsp" class="btn btn-default btn-gray"><i
 					class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;SIGN UP</a>
 					<a
 					href="#" class="btn btn-default btn-gray"><i
