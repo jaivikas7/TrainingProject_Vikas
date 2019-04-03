@@ -93,7 +93,7 @@ public class CustomerService {
 		//CONNECT TO MAIL SERVER
 		Session session = Session.getDefaultInstance(properties,new javax.mail.Authenticator() {
 																	protected PasswordAuthentication getPasswordAuthentication() {
-																		return new PasswordAuthentication("jaivikas7@gmail.com","Vikas@1970@");
+																		return new PasswordAuthentication("jaivikas7@gmail.com","#####");
 																	}
 																});
 		try {
