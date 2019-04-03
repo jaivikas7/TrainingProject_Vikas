@@ -18,101 +18,16 @@
 <!-- FONT-AWESOME CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 
 </head>
 <body>
 
 	<div class="container-fluid">
 
-		<div class="row dark">
+		<%@ include file="SocialIconsMenu.jsp" %>
 
-			<div class="col-md-offset-1 col-md-6">
-				<a class="btn btn-default btn-gray">Contact +91 40 6621 7777</a>
-			</div>
-			<%
-				String w = (String) session.getAttribute("log");
-
-				if (w == null) {
-			%>
-			<div class="col-md-4">
-				<a href="SignInSignUpForms.jsp" class="btn btn-default btn-gray"><i
-					class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;SIGN IN</a> <a
-					href="SignInSignUpForms.jsp" class="btn btn-default btn-gray"><i
-					class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;SIGN UP</a> <a
-					href="#" class="btn btn-default btn-gray"><i
-					class="fa fa-facebook"></i></a> <a href="#"
-					class="btn btn-default btn-gray"><i class="fa fa-twitter"></i></a>
-				<a href="#" class="btn btn-default btn-gray"><i
-					class="fa fa-google-plus"></i></a> <a href="#"
-					class="btn btn-default btn-gray"><i class="fa fa-envelope"></i></a>
-			</div>
-			<%
-				} else if (w != null) {
-					%>
-						<div class="col-md-4">
-				<a href="#" class="btn btn-default btn-gray">Welcome <%= w %></a> 
-				<a href="logout" class="btn btn-default btn-gray"><i class="glyphicon glyphicon-log-out"></i></a>
-			</div>
-					<%
-				}
-			%>
-
-		</div>
-
-		<div class="row row2">
-
-			<div class="col-md-offset-1 col-md-3">
-				<br /> <img src="images/logo.png" class="col-md-5" />
-			</div>
-
-			<div class="col-md-6">
-				<ul class="nav navbar-nav navbar-right">
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">ELECTRONICS <span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 1-1</a></li>
-							<li><a href="#">Page 1-2</a></li>
-							<li><a href="#">Page 1-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">MEN <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 2-1</a></li>
-							<li><a href="#">Page 2-2</a></li>
-							<li><a href="#">Page 2-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">WOMEN <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 3-1</a></li>
-							<li><a href="#">Page 3-2</a></li>
-							<li><a href="#">Page 3-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">BABY &amp; KIDS <span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 4-1</a></li>
-							<li><a href="#">Page 4-2</a></li>
-							<li><a href="#">Page 4-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">HOME &amp; FURNITURE <span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 5-1</a></li>
-							<li><a href="#">Page 5-2</a></li>
-							<li><a href="#">Page 5-3</a></li>
-						</ul></li>
-				</ul>
-			</div>
-		</div>
+		<%@ include file="NavMenu.jsp" %>
 		
 
 		<div class="row row3">
@@ -219,31 +134,47 @@
 				<div class="row">
 					<hr class="dash-green" />
 				</div>
-				<form action="#">
+				<form action="update" method="post">
 
 					<div class="row">
-
+			
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="fname"> First Name </label> <input type="text"
-									name="fname" class="form-control" />
+								<label for="f1"> First Name </label> <input type="text"
+									name="f1" class="form-control" />
 							</div>
 						</div>
 
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="lname"> Last Name </label> <input type="text"
-									name="lname" class="form-control" />
+								<label for="f2"> Last Name </label> <input type="text"
+									name="f2" class="form-control" />
 							</div>
 						</div>
 
+					</div>
+					
+					<div class="row">
+						<div class="col-md-12">
+							<p>Gender</p>
+							
+							<div class="radio">
+								<label><input type="radio" name="f3" value="Male" checked >Male</label>
+							</div>
+							<div class="radio">
+								<label><input type="radio" name="f3" value="Female" >Female</label>
+							</div>
+							<div class="radio">
+								<label><input type="radio" name="f3" value="Transgender" >Transgender</label>
+							</div>
+						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<label for="addr"> Address </label>
-								<textarea rows="2" name="addr" class="form-control"></textarea>
+								<label for="f4"> Address </label>
+								<textarea rows="2" name="f4" class="form-control" ></textarea>
 							</div>
 						</div>
 					</div>
@@ -252,37 +183,29 @@
 
 						<div class="col-md-3">
 							<div class="form-group">
-								<label for="city"> City </label> <input type="text" name="city"
+								<label for="f5"> City </label> <input type="text" name="f5"
 									class="form-control" />
 							</div>
 						</div>
 
 						<div class="col-md-3">
 							<div class="form-group">
-								<label for="zip"> ZIP </label> <input type="text" name="zip"
+								<label for="f6"> ZIP </label> <input type="text" name="f6"
 									class="form-control" />
 							</div>
 						</div>
 
 						<div class="col-md-3">
 							<div class="form-group">
-								<label for="state"> State </label> <select name="state"
-									class="form-control">
-									<option></option>
-									<option>1</option>
-									<option>2</option>
-								</select>
+								<label for="f8"> Country </label> 
+								<select id="country" name ="country" class="form-control" ></select>
 							</div>
 						</div>
 
 						<div class="col-md-3">
 							<div class="form-group">
-								<label for="country"> Country </label> <select name="country"
-									class="form-control">
-									<option></option>
-									<option>1</option>
-									<option>2</option>
-								</select>
+								<label for="f7"> State </label> 
+								<select name ="state" id ="state" class="form-control"></select>
 							</div>
 						</div>
 
@@ -292,17 +215,19 @@
 
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="con"> Contact Number </label> <input type="text"
-									name="con" class="form-control" />
+								<label for="f9"> Contact Number </label> <input type="text"
+									name="f9" class="form-control" />
 							</div>
 						</div>
 
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="email"> Email </label> <input type="text"
-									name="email" class="form-control" />
+								<label for="f10"> Email </label> <input type="text"
+									name="f10" class="form-control" />
 							</div>
 						</div>
+						
+					 <hr/>						
 
 					</div>
 
@@ -314,6 +239,24 @@
 					</div>
 
 				</form>
+				
+				
+				<% String cd = (String)request.getAttribute("cd");
+					
+						if(cd!=null)
+						{
+							if(cd.equals("Y"))
+							{%>
+								<div class="alert alert-success">Details changed successfully</div>
+							<%}
+							
+							else
+							{%>
+								<div class="alert alert-danger">Details change not successfully</div>
+							<%}
+						}				
+				%>
+				
 
 			</div>
 
@@ -328,11 +271,14 @@
 
 				<div class="list-group col-md-8 col-sm-12">
 					<a class="list-group-item" href="#"><span
-						class="glyphicon glyphicon-th-list"></span> My Orders</a> <a
+						class="glyphicon glyphicon-th-list"></span> My Orders</a> 
+					<a
 						class="list-group-item" href="#"><span
-						class="glyphicon glyphicon-heart"></span> My Wishlist</a> <a
+						class="glyphicon glyphicon-heart"></span> My Wishlist</a>
+					 <a
 						class="list-group-item active" href="#"><span
-						class="glyphicon glyphicon-user"></span> My Account</a> <a href="logout"
+						class="glyphicon glyphicon-user"></span> My Account</a> 
+					<a href="logout"
 						class="list-group-item" href="#"><span
 						class="glyphicon glyphicon-log-out"></span> Logout</a>
 				</div>
@@ -456,7 +402,14 @@
 
 	<script src="js/jquery-3.3.1.js"></script>
 	<script src="bootstrap/js/bootstrap.js"></script>
-
+	<script src="js/countries.js"></script>
+	<script language="javascript">
+		
+		populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+		populateCountries("country2");
+		populateCountries("country2");
+		
+	</script>
 	<!-- SCRIPTS END -->
 
 </body>
