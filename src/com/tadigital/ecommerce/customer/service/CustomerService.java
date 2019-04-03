@@ -48,14 +48,147 @@ public class CustomerService {
 			return false;
 	}
 	
+	public boolean changePassword(Customer customer) {
+		boolean status = customerDao.updatePassword(customer);
+		
+		if(status)
+			return true;
+		else
+			return false;
+	}
+	
 	
 	public boolean registerCustomer(Customer customer) {
 		boolean status = customerDao.insertCustomer(customer);
 		if(status) {
 			sendWelcomeMail(customer.getFirstName() + " " + customer.getLastName(), customer.getEmail());
+			return true;
+		}
+		else
+			return false;
+	}
+	
+	public boolean updateCustomer(Customer customer, String x)
+	{
+		boolean status = customerDao.updateCustomerDet(customer,x);
+		if(status){
+			sendMailUpdate(customer.getFirstName() + " " + customer.getLastName(), customer.getEmail());
+			return true;
 		}
 		return status;
 	}
+	
+	
+	public String sendReport(String est, String email) {
+		String status = "NOT SENT";
+		
+		//MAIL SERVER CONFIGURATION
+		Properties properties = new Properties();
+		properties.put("mail.smtp.host", "smtp.gmail.com");
+		properties.put("mail.smtp.socketFactory.port", "465");
+		properties.put("mail.smtp.socketFactory.class",	"javax.net.ssl.SSLSocketFactory");
+		properties.put("mail.smtp.auth", "true");
+		properties.put("mail.smtp.port", "465");
+		
+		//CONNECT TO MAIL SERVER
+		Session session = Session.getDefaultInstance(properties,new javax.mail.Authenticator() {
+																	protected PasswordAuthentication getPasswordAuthentication() {
+																		return new PasswordAuthentication("jaivikas7@gmail.com","Vikas@1970@");
+																	}
+																});
+		try {
+			//COMPOSE MESSAGE
+			MimeMessage mimeMessage = new MimeMessage(session);
+			mimeMessage.setFrom(new InternetAddress("jaivikas7@gmail.com"));
+			mimeMessage.setRecipients(Message.RecipientType.TO,	InternetAddress.parse(email));
+			mimeMessage.setSubject("Support@TADigital");
+			MimeMultipart mp = new MimeMultipart();
+			MimeBodyPart mbp1= new MimeBodyPart();
+			
+						
+			String msg ="<body bgcolor='#DAF7A6'>Dear <i><font color='#FF7A33'>Admin</font></i>,<br/><br/>" +
+					 "<br/><h2><font color='#C70039'>Exception Report</font></h2>" + est +
+					  "<br/><br/><br/><font color='#FFC300'>Support<br/>TA Digital<br/><br/></font><img src='cid:image'></body>";
+			mbp1.setContent(msg,"text/html");
+			mp.addBodyPart(mbp1);
+			
+			mbp1 = new MimeBodyPart();
+			DataSource fds = new FileDataSource("D://Trainee Engineers March 2019/workspace/TrainingProject_Vikas/WebContent/images/logo.png");
+			mbp1.setDataHandler(new DataHandler(fds));
+			mbp1.setHeader("Content-ID", "<image>");
+			mp.addBodyPart(mbp1);
+			
+			
+			mimeMessage.setContent(mp);
+				
+
+			//SEND MAIL
+			Transport.send(mimeMessage);
+			
+			status = "SENT";
+		} catch (MessagingException mex) {
+			mex.printStackTrace();
+		}
+		
+		return status;
+	}
+	
+	
+	
+	public String sendMailUpdate(String name, String email) {
+		String status = "NOT SENT";
+		
+		//MAIL SERVER CONFIGURATION
+		Properties properties = new Properties();
+		properties.put("mail.smtp.host", "smtp.gmail.com");
+		properties.put("mail.smtp.socketFactory.port", "465");
+		properties.put("mail.smtp.socketFactory.class",	"javax.net.ssl.SSLSocketFactory");
+		properties.put("mail.smtp.auth", "true");
+		properties.put("mail.smtp.port", "465");
+		
+		//CONNECT TO MAIL SERVER
+		Session session = Session.getDefaultInstance(properties,new javax.mail.Authenticator() {
+																	protected PasswordAuthentication getPasswordAuthentication() {
+																		return new PasswordAuthentication("jaivikas7@gmail.com","Vikas@1970@");
+																	}
+																});
+		try {
+			//COMPOSE MESSAGE
+			MimeMessage mimeMessage = new MimeMessage(session);
+			mimeMessage.setFrom(new InternetAddress("jaivikas7@gmail.com"));
+			mimeMessage.setRecipients(Message.RecipientType.TO,	InternetAddress.parse(email));
+			mimeMessage.setSubject("Alert@TADigital");
+			MimeMultipart mp = new MimeMultipart();
+			MimeBodyPart mbp1= new MimeBodyPart();
+			
+						
+			String msg ="<body bgcolor='#DAF7A6'>Dear <i><font color='#FF7A33'>" + name + "</font></i>,<br/><br/>" +
+					 "<br/><h2><font color='#C70039'>Your profile has been updated successfully!</font></h2>" +
+					  "<br/><br/><br/><font color='#FFC300'>Happy Shopping!<br/>TA Digital<br/><br/></font><img src='cid:image'></body>";
+			mbp1.setContent(msg,"text/html");
+			mp.addBodyPart(mbp1);
+			
+			mbp1 = new MimeBodyPart();
+			DataSource fds = new FileDataSource("D://Trainee Engineers March 2019/workspace/TrainingProject_Vikas/WebContent/images/logo.png");
+			mbp1.setDataHandler(new DataHandler(fds));
+			mbp1.setHeader("Content-ID", "<image>");
+			mp.addBodyPart(mbp1);
+			
+			
+			mimeMessage.setContent(mp);
+				
+
+			//SEND MAIL
+			Transport.send(mimeMessage);
+			
+			status = "SENT";
+		} catch (MessagingException mex) {
+			mex.printStackTrace();
+		}
+		
+		return status;
+	}
+	
 	
 	public String sendWelcomeMail(String name, String email) {
 		String status = "NOT SENT";
@@ -71,7 +204,7 @@ public class CustomerService {
 		//CONNECT TO MAIL SERVER
 		Session session = Session.getDefaultInstance(properties,new javax.mail.Authenticator() {
 																	protected PasswordAuthentication getPasswordAuthentication() {
-																		return new PasswordAuthentication("jaivikas7@gmail.com","***WORD***");
+																		return new PasswordAuthentication("jaivikas7@gmail.com","Vikas@1998@");
 																	}
 																});
 		try {
