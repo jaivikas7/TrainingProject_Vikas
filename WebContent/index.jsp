@@ -254,38 +254,38 @@
 		</div><br/>
 		
 		<div class="row ml mar-left">
-			<div class="col-md-2 prod1 center-block text-center">
-				<br clear="all"/><img src="images/11.jpeg" class="col-md-12 pad"/><br clear="all"/>
+			<div class="col-md-2 prod1 text-center center-block ">
+				<br clear="all"/><img src="images/11.jpeg" class="col-md-10 pad"/><br clear="all"/>
 				<p><b>Redmi Note 6 Pro</b></p>
 				<p>12MP + 5MP | 20MP + 2MP</p>
 				<a href="#" class="btn btn-primary pad">View<br clear="all"/></a><br clear="all"/><br clear="all"/>
 			</div>
 			<div class="col-md-2 prod1 center-block text-center">
-				<br clear="all"/><img src="images/12.jpeg" class="col-md-12 pad"/><br clear="all"/>
+				<br clear="all"/><img src="images/12.jpeg" class="col-md-10 pad"/><br clear="all"/>
 				<p><b>Realme 2</b></p>
 				<p>13MP + 2MP | 8MP Camera</p>
 				<a href="#" class="btn btn-primary pad">View<br clear="all"/></a><br clear="all"/><br clear="all"/>
 			</div>
 			<div class="col-md-2 prod1 center-block text-center">
-				<br clear="all"/><img src="images/13.jpeg" class="col-md-12 pad"/><br clear="all"/>
+				<br clear="all"/><img src="images/13.jpeg" class="col-md-10 pad"/><br clear="all"/>
 				<p><b>Realme C1</b></p>
 				<p>13MP + 2MP | 5MP Camera</p>
 				<a href="#" class="btn btn-primary pad">View<br clear="all"/></a><br clear="all"/><br clear="all"/>
 			</div>
 			<div class="col-md-2 prod1 center-block text-center">
-				<br clear="all"/><img src="images/14.jpeg" class="col-md-12 pad"/><br clear="all"/>
+				<br clear="all"/><img src="images/14.jpeg" class="col-md-10 pad"/><br clear="all"/>
 				<p><b>Nokia 6.1 Plus</b></p>
 				<p>16MP + 5MP Camera</p>
 				<a href="#" class="btn btn-primary pad">View<br clear="all"/></a><br clear="all"/><br clear="all"/>
 			</div>
 			<div class="col-md-2 prod1 center-block text-center">
-				<br clear="all"/><img src="images/15.jpeg" class="col-md-12 pad"/><br clear="all"/>
+				<br clear="all"/><img src="images/15.jpeg" class="col-md-10 pad"/><br clear="all"/>
 				<p><b>Lenovo A5</b></p>
 				<p>16MP | 8MP Camera</p>
 				<a href="#" class="btn btn-primary pad">View<br clear="all"/></a><br clear="all"/><br clear="all"/>
 			</div>
 			<div class="col-md-2 prod1 center-block text-center">
-				<br clear="all"/><img src="images/16.jpeg" class="col-md-12 pad center-block"/><br clear="all"/>
+				<br clear="all"/><img src="images/16.jpeg" class="col-md-10 pad center-block"/><br clear="all"/>
 				<p><b>Redmi Note 5 Pro</b></p>
 				<p>12MP + 5MP Camera</p>
 				<a href="#" class="btn btn-primary pad">View<br clear="all"/></a><br clear="all"/><br clear="all"/>
