@@ -74,7 +74,7 @@
 							<li><a href="#">Page 1-1</a></li>
 							<li><a href="#">Page 1-2</a></li>
 							<li><a href="#">Page 1-3</a></li>
-						</ul></li>
+						</li></ul>
 
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">MEN <span class="caret"></span></a>
@@ -140,7 +140,7 @@
 				
 				<br/>
 					<a href="index.jsp" class="btn btn-default btn-green"><span class="glyphicon glyphicon-home"></span>&nbsp;HOME</a>
-					<a href="index.jsp" class="btn btn-default btn-green"><span class="fa fa-bug"></span>&nbsp;REPORT</a>
+					<a href="report" class="btn btn-default btn-green"><span class="fa fa-bug"></span>&nbsp;REPORT</a>
 				<br/><br/>
 				
 				<div class="alert alert-danger text-left">
@@ -148,6 +148,7 @@
 						<%
 							StringWriter errors = new StringWriter();
 		    				exception.printStackTrace(new PrintWriter(errors));
+		    				session.setAttribute("EST", errors.toString());
 							out.print(errors.toString());
 						 %>
 				</div>
