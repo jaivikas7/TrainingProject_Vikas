@@ -24,95 +24,9 @@
 
 	<div class="container-fluid">
 
-		<div class="row dark">
+		<%@ include file="SocialIconsMenu.jsp" %>
 
-			<div class="col-md-offset-1 col-md-6">
-				<a class="btn btn-default btn-gray">Contact +91 40 6621 7777</a>
-			</div>
-			<%
-				String w = (String) session.getAttribute("log");
-
-				if (w == null) {
-			%>
-			<div class="col-md-4">
-				<a href="SignInSignUpForms.jsp" class="btn btn-default btn-gray"><i
-					class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;SIGN IN</a> <a
-					href="SignInSignUpForms.jsp" class="btn btn-default btn-gray"><i
-					class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;SIGN UP</a> <a
-					href="#" class="btn btn-default btn-gray"><i
-					class="fa fa-facebook"></i></a> <a href="#"
-					class="btn btn-default btn-gray"><i class="fa fa-twitter"></i></a>
-				<a href="#" class="btn btn-default btn-gray"><i
-					class="fa fa-google-plus"></i></a> <a href="#"
-					class="btn btn-default btn-gray"><i class="fa fa-envelope"></i></a>
-			</div>
-			<%
-				}  else if (w != null) {
-					%>
-					<div class="col-md-4">
-				<a href="#" class="btn btn-default btn-gray">Welcome <%= w %></a> 
-				<a href="logout" class="btn btn-default btn-gray"><i class="glyphicon glyphicon-log-out"></i></a>
-			</div>
-				<%
-			}
-		%>
-
-		</div>
-
-		<div class="row row2">
-
-			<div class="col-md-offset-1 col-md-3">
-				<br /> <img src="images/logo.png" class="col-md-5" />
-			</div>
-
-			<div class="col-md-6">
-				<ul class="nav navbar-nav navbar-right">
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">ELECTRONICS <span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 1-1</a></li>
-							<li><a href="#">Page 1-2</a></li>
-							<li><a href="#">Page 1-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">MEN <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 2-1</a></li>
-							<li><a href="#">Page 2-2</a></li>
-							<li><a href="#">Page 2-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">WOMEN <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 3-1</a></li>
-							<li><a href="#">Page 3-2</a></li>
-							<li><a href="#">Page 3-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">BABY &amp; KIDS <span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 4-1</a></li>
-							<li><a href="#">Page 4-2</a></li>
-							<li><a href="#">Page 4-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">HOME &amp; FURNITURE <span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 5-1</a></li>
-							<li><a href="#">Page 5-2</a></li>
-							<li><a href="#">Page 5-3</a></li>
-						</ul></li>
-				</ul>
-			</div>
-		</div>
+		<%@ include file="NavMenu.jsp" %>
 
 		<div class="row row3">
 			<div class="col-md-offset-1 col-md-6">
