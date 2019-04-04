@@ -38,8 +38,9 @@ public class ChangePasswordControllerServlet extends HttpServlet {
 				if(status)
 				{
 					req.setAttribute("up", "Y");
+					ses.invalidate();
 					RequestDispatcher rd = 
-							req.getRequestDispatcher("CustomerAccount.jsp");
+							req.getRequestDispatcher("SignInSignUpForms.jsp");
 					rd.forward(req, resp);
 				}
 			}
