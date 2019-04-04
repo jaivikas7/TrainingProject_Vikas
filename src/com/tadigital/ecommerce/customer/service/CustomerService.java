@@ -72,7 +72,7 @@ public class CustomerService {
 	{
 		boolean status = customerDao.updateCustomerDet(customer,x);
 		if(status){
-			sendMailUpdate(customer.getFirstName() + " " + customer.getLastName(), customer.getEmail());
+			sendMailUpdate(customer.getFirstName() + " " + customer.getLastName(), x);
 			return true;
 		}
 		return status;
@@ -93,7 +93,7 @@ public class CustomerService {
 		//CONNECT TO MAIL SERVER
 		Session session = Session.getDefaultInstance(properties,new javax.mail.Authenticator() {
 																	protected PasswordAuthentication getPasswordAuthentication() {
-																		return new PasswordAuthentication("jaivikas7@gmail.com","#####");
+																		return new PasswordAuthentication("jaivikas7@gmail.com","Vikas@1963@");
 																	}
 																});
 		try {
@@ -149,7 +149,7 @@ public class CustomerService {
 		//CONNECT TO MAIL SERVER
 		Session session = Session.getDefaultInstance(properties,new javax.mail.Authenticator() {
 																	protected PasswordAuthentication getPasswordAuthentication() {
-																		return new PasswordAuthentication("jaivikas7@gmail.com","Vikas@1970@");
+																		return new PasswordAuthentication("jaivikas7@gmail.com","Vikas@1963@");
 																	}
 																});
 		try {
@@ -204,7 +204,7 @@ public class CustomerService {
 		//CONNECT TO MAIL SERVER
 		Session session = Session.getDefaultInstance(properties,new javax.mail.Authenticator() {
 																	protected PasswordAuthentication getPasswordAuthentication() {
-																		return new PasswordAuthentication("jaivikas7@gmail.com","Vikas@1998@");
+																		return new PasswordAuthentication("jaivikas7@gmail.com","Vikas@1963@");
 																	}
 																});
 		try {
