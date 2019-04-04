@@ -25,29 +25,25 @@ public class ChangeDetailsControllerServlet extends HttpServlet {
 		String add = req.getParameter("f4");
 		String city = req.getParameter("f5");
 		String zip = req.getParameter("f6");
-		String country = req.getParameter("f7");
-		String state = req.getParameter("f8");
+		String country = req.getParameter("country");
+		String state = req.getParameter("state");
 		String contact = req.getParameter("f9");
 		String email = req.getParameter("f10");
 		
 		HttpSession ses = req.getSession();
-		String name=(String)ses.getAttribute("log");
 		String mail = (String)ses.getAttribute("id");
-		
-		if(fname=="") {
+		String name = (String)ses.getAttribute("log");
+			
+		if(fname=="")
+		{
 			fname = name.substring(0, name.indexOf(" "));
 		}
 		
-		if(lname=="") {
-			lname = name.substring(name.indexOf(" "), name.length()-1);
+		if(lname=="")
+		{
+			lname = name.substring(name.indexOf(" ")+1);
 		}
-		
-		if(email=="") {
-			email = mail;
-		}
-			
-		
-		
+				
 		if(mail!=null)
 		{
 			Customer customer = new Customer();
@@ -68,8 +64,8 @@ public class ChangeDetailsControllerServlet extends HttpServlet {
 			if(status)
 			{
 				req.setAttribute("cd", "Y");
-				ses.invalidate();
-				RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
+				ses.setAttribute("log", customer.getFirstName() + " " + customer.getLastName());
+				RequestDispatcher rd = req.getRequestDispatcher("CustomerAccount.jsp");
 				rd.forward(req, resp);
 			}
 			
