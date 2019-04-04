@@ -133,6 +133,11 @@
 						<label for="f2"> Password </label> <input type="password"
 							name="f2" class="form-control" required="required" />
 					</div>
+					
+					<div class="form-group">
+						<input type="checkbox"
+							name="f3"/>Stay signed in
+					</div>
 
 					<div class="form-group">
 						<button type="submit"
@@ -152,6 +157,14 @@
 					}
 					}
 				%>
+				<%String up = (String)request.getAttribute("up");
+					if(up!=null)
+					{
+						if(up.equals("Y"))
+						{%>
+							<div class="alert alert-success">Password Changed Successfully. Please login again.</div>
+						<%
+						}} %>
 				<hr />
 			</div>
 		</div>
