@@ -109,12 +109,7 @@
 					String up = (String)request.getAttribute("up");
 					if(up!=null)
 					{
-						if(up.equals("Y"))
-						{%>
-							<div class="alert alert-success">Password Changed Successfully</div>
-						<%
-						}
-						else if(up.equals("DNM"))
+						if(up.equals("DNM"))
 						{%>
 							<div class="alert alert-danger">Please verify passwords</div>
 						<%							
@@ -400,8 +395,6 @@
 
 	<!-- SCRIPTS BEGIN -->
 
-	<script src="js/jquery-3.3.1.js"></script>
-	<script src="bootstrap/js/bootstrap.js"></script>
 	<script src="js/countries.js"></script>
 	<script language="javascript">
 		
@@ -410,6 +403,9 @@
 		populateCountries("country2");
 		
 	</script>
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+	
 	<!-- SCRIPTS END -->
 
 </body>
