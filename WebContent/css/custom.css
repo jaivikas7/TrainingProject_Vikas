@@ -194,14 +194,13 @@
 .prod1
 {
 	border: 1px solid #ccc;
-	
 }
 
 .prod1 img
 {
-	
-	height: 280px;
-	width: 100%;
+	height: 170px;
+	padding-left: 65px;
+	padding-right: 30px;
 }
 
 /* INDEX */
